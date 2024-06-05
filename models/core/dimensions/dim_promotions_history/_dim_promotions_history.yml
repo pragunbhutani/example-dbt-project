@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_promotions_history
+    description: >
+      The history of promotions in the system
+    columns:
+      - name: dim_promotions_key
+        description: The unique identifier for the promotion history record
+        tests:
+          - unique
+          - not_null
+      - name: promotion_id
+        description: The unique identifier for the promotion
+        tests:
+          - not_null
+      - name: item_id
+        description: The unique identifier for the item that the promotion applies to
+        tests:
+          - not_null
+      - name: discount_percentage
+        description: The discount percentage as a float
+      - name: created_at
+        description: The timestamp when the promotion was created
+      - name: valid_from
+        description: The timestamp when the promotion history record became valid
+      - name: valid_to
+        description: The timestamp when the promotion history record became invalid
+      - name: is_current
+        description: A boolean indicating if the promotion history record is current

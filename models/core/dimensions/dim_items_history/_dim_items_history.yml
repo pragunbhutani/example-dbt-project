@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_items_history
+    description: >
+      The history of items in the system
+    columns:
+      - name: dim_items_key
+        description: The unique identifier for the item history record
+        tests:
+          - unique
+          - not_null
+      - name: item_id
+        description: The unique identifier for the item
+        tests:
+          - not_null
+      - name: item_name
+        description: The name of the item
+      - name: item_category
+        description: The category of the item
+      - name: base_price_usd
+        description: The base price of the item in USD
+      - name: created_at
+        description: The timestamp when the item was created
+      - name: valid_from
+        description: The timestamp when the item history record became valid
+      - name: valid_to
+        description: The timestamp when the item history record became invalid
+      - name: is_current
+        description: A boolean indicating if the item history record is current

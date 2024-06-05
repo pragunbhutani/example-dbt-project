@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: fct_order_items
+    description: >
+      Contains one row per order item and includes information about the item, the order, and any promotions applied
+    columns:
+      - name: order_item_id
+        description: The unique identifier for the order item
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: The unique identifier for the order that the order item is part of
+        tests:
+          - not_null
+      - name: item_id
+        description: The unique identifier for the item that the order item is for
+        tests:
+          - not_null
+      - name: promotion_id
+        description: The unique identifier for the promotion applied to the order item
+      - name: dim_item_key
+        description: The unique identifier for the item dimension record
+        tests:
+          - not_null
+      - name: dim_promotion_key
+        description: The unique identifier for the promotion dimension record
+      - name: quantity
+        description: The quantity of the item that is part of the order item
+      - name: discount_percentage_as_float
+        description: The discount percentage as a float applied to the order item
+      - name: base_unit_selling_price_usd
+        description: The base unit selling price of the item in USD
+      - name: landed_unit_cost_price_usd
+        description: The landed unit cost price of the item in USD
+      - name: effective_unit_selling_price_usd
+        description: The effective unit selling price of the item in USD after applying any promotions
+      - name: unit_margin_usd
+        description: The unit margin of the item in USD after applying any promotions
+      - name: total_selling_price_usd
+        description: The total selling price of the quantity of the item in the order in USD
+      - name: total_cost_price_usd
+        description: The total cost price of the quantity of the item in the order in USD
+      - name: total_margin_usd
+        description: The total margin of the quantity of the item in the order in USD
+      - name: created_at
+        description: The timestamp when the order item was added to the order
+      - name: updated_at
+        description: The timestamp when the order item was last updated

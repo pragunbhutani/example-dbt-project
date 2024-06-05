@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: >
+      Contains one row per order and includes information about the user, the merchant, and the order items
+    columns:
+      - name: order_id
+        description: The unique identifier for the order
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: The unique identifier for the user that created the order
+        tests:
+          - not_null
+      - name: merchant_id
+        description: The unique identifier for the merchant that the order is for
+        tests:
+          - not_null
+      - name: dim_user_key
+        description: The unique identifier for the user dimension record
+        tests:
+          - not_null
+      - name: dim_merchant_key
+        description: The unique identifier for the merchant dimension record
+        tests:
+          - not_null
+      - name: order_placed_at
+        description: The timestamp when the order was placed
+      - name: total_selling_price_usd
+        description: The total selling price of the order in USD
+      - name: total_cost_price_usd
+        description: The total cost price of the order in USD
+      - name: total_margin_usd
+        description: The total margin of the order in USD
+      - name: created_at
+        description: The timestamp when the order was created
+      - name: updated_at
+        description: The timestamp when the order was last updated

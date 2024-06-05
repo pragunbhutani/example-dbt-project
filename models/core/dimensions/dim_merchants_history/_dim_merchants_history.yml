@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_merchants_history
+    description: >
+      The history of merchants in the system
+    columns:
+      - name: dim_merchants_key
+        description: The unique identifier for the merchant history record
+        tests:
+          - unique
+          - not_null
+      - name: merchant_id
+        description: The unique identifier for the merchant
+        tests:
+          - not_null
+      - name: merchant_name
+        description: The name of the merchant
+      - name: latitude
+        description: The latitude of the merchant's location
+      - name: longitude
+        description: The longitude of the merchant's location
+      - name: created_at
+        description: The timestamp when the merchant was created
+      - name: valid_from
+        description: The timestamp when the merchant history record became valid
+      - name: valid_to
+        description: The timestamp when the merchant history record became invalid
+      - name: is_current
+        description: A boolean indicating if the merchant history record is current

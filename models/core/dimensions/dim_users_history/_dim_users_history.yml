@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: dim_users_history
+    description: >
+      The history of users in the system
+    columns:
+      - name: dim_users_key
+        description: The unique identifier for the user history record
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: The unique identifier for the user
+        tests:
+          - not_null
+      - name: user_name
+        description: The name of the user
+      - name: user_email
+        description: The email address of the user
+      - name: latitude
+        description: The latitude of the user's location
+      - name: longitude
+        description: The longitude of the user's location
+      - name: created_at
+        description: The timestamp when the user was created
+      - name: valid_from
+        description: The timestamp when the user history record became valid
+      - name: valid_to
+        description: The timestamp when the user history record became invalid
+      - name: is_current
+        description: A boolean indicating if the user history record is current

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_merchants
+    columns:
+      - name: merchant_id
+        description: The unique identifier for the merchant
+      - name: merchant_name
+        description: The name of the merchant
+      - name: latitude
+        description: The latitude of the merchant's location
+      - name: longitude
+        description: The longitude of the merchant's location
+      - name: created_at
+        description: The timestamp when the merchant was created
+      - name: updated_at
+        description: The timestamp when the merchant was last updated

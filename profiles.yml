@@ -1,0 +1,26 @@
+config:
+  send_anonymous_usage_stats: false
+
+dwh_snowflake: # Name of profile
+  target: prod # Name of default target
+
+  outputs:
+    dev:
+      type: snowflake
+      user: "{{ env_var('DBT_SNOWFLAKE_USER') }}"
+      account: "{{ env_var('DBT_SNOWFLAKE_ACCOUNT') }}"
+      role: "{{ env_var('DBT_SNOWFLAKE_ROLE') }}"
+      warehouse: "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}"
+      database: "{{ dwh_dev_%s | format(env_var('DBT_SNOWFLAKE_USER')) }}"
+      threads: 5
+      connect_timeout: 5
+
+    prod:
+      type: snowflake
+      user: "{{ env_var('DBT_SNOWFLAKE_USER') }}"
+      account: "{{ env_var('DBT_SNOWFLAKE_ACCOUNT') }}"
+      role: "{{ env_var('DBT_SNOWFLAKE_ROLE') }}"
+      warehouse: "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}"
+      database: dwh_prod
+      threads: 10
+      connect_timeout: 10

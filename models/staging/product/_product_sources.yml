@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: product
+    schema: main_db
+
+    tables:
+      - name: users
+        description: Contains information about users of the app
+
+      - name: merchants
+        description: Merchants store products and sell them to users
+
+      - name: items
+        description: Items are products that are sold by merchants
+
+      - name: promotions
+        description: Promotions are discounts that can be applied to items
+
+      - name: inventory
+        description: Log of item batches acquired by merchants
+
+      - name: orders
+        description: Orders are created by users to purchase items
+
+      - name: order_items
+        description: Order items are the items that are part of an order

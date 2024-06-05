@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: int_items_landed_cost_daily
+    description: >
+      Calculates the landed cost of items on a daily basis
+    columns:
+      - name: report_date
+        description: The date of the landed cost report
+        tests:
+          - not_null
+      - name: merchant_id
+        description: The unique identifier for the merchant
+        tests:
+          - not_null
+      - name: item_id
+        description: The unique identifier for the item
+        tests:
+          - not_null
+      - name: quantity_acquired
+        description: The quantity of the item acquired on the report date
+      - name: unit_cost_usd
+        description: The unit cost of the item in USD on the report date
+      - name: quantity_sold
+        description: The quantity of the item sold on the report date
+      - name: total_cost_usd
+        description: The total cost of the items acquired on the report date in USD
+      - name: cumulative_quantity_acquired
+        description: The cumulative quantity of the item acquired up to the report date
+      - name: cumulative_acquisition_cost_usd
+        description: The cumulative acquisition cost of the item in USD up to the report date
+      - name: landed_unit_cost_usd
+        description: The landed unit cost of the item in USD on the report date

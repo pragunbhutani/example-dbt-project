@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_promotions
+    columns:
+      - name: promotion_id
+        description: The unique identifier for the promotion
+      - name: item_id
+        description: The unique identifier for the item that the promotion applies to
+      - name: discount_percentage_as_float
+        description: The discount percentage as a float
+      - name: created_at
+        description: The timestamp when the promotion was created
+      - name: updated_at
+        description: The timestamp when the promotion was last updated
